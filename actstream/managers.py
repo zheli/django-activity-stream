@@ -168,7 +168,7 @@ class FollowManager(GFKManager):
         followers_without_friends = followers.exclude(user__in=self.friends(actor)).exclude(user=actor)
         return [follower.user for follower in followers_without_friends]
 
-    def following_without_friends(self, user):
+    def followings_without_friends(self, user):
         """
         Returns a list of actors that the given user is following (eg who im following).
         Items in the list can be of any model unless a list of restricted models are passed.
